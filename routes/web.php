@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return '<h3>Hello World</h3>';
+    //return view('home');
 });
 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');//->middleware('verified');
 
-
+Route::get('/random', function () {
+    $data = [];
+    $data['version'] = '0.1.1';
+    return view('welcome', $data);
+});
