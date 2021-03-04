@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return '<h3>Hello World</h3>';
-    //return view('home');
-});
+Route::get('/', 'ContentsController@home');
+
+Route::get('/clients', 'ClientController@index');
+Route::get('/clients/new', 'ClientController@new');
 
 Auth::routes(['verify' => true]);
 
