@@ -8,7 +8,7 @@ use App\Title as Title;
 class ClientController extends Controller
 {
     public function __construct(Title $title){
-        $this->titles = titles->all();
+        $this->titles = $title->all();
     }
 
     public function di(){
